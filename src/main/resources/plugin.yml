@@ -1,0 +1,27 @@
+name: ShopCommands
+version: 1.0.0
+main: online.prismsmp.shopcommands.ShopCommands
+api-version: '1.21'
+description: Opens zMenu shop inventories for all players
+commands:
+  commonshop:
+    description: Opens Common Crate Shop
+    permission: ""
+  uncommonshop:
+    description: Opens Uncommon Crate Shop
+    permission: ""
+  rareshop:
+    description: Opens Rare Crate Shop
+    permission: ""
+  epicshop:
+    description: Opens Epic Crate Shop
+    permission: ""
+  legendaryshop:
+    description: Opens Legendary Crate Shop
+    permission: ""
+  keyshopnpc:
+    description: Opens Key Shop NPC menu
+    permission: ""
+permissions:
+  shopcommands.use:
+    default: true
