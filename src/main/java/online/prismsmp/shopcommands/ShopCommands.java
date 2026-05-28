@@ -25,6 +25,20 @@ public class ShopCommands extends JavaPlugin {
         registerZMenuCommand("cmds",          "commands_npc");
         registerZMenuCommand("mystats",       "leaderboard_npc");
 
+        // Spawn teleport via Multiverse
+        var spawnCmd = getCommand("spawn");
+        if (spawnCmd != null) {
+            spawnCmd.setExecutor((sender, cmd, label, args) -> {
+                if (sender instanceof Player player) {
+                    getServer().dispatchCommand(
+                        getServer().getConsoleSender(),
+                        "mv tp " + player.getName() + " spawnworld"
+                    );
+                }
+                return true;
+            });
+        }
+
         getLogger().info("ShopCommands loaded - all commands registered.");
     }
 
