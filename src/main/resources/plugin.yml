@@ -1,5 +1,5 @@
 name: ShopCommands
-version: '1.1.0'
+version: '1.2.0'
 main: online.prismsmp.shopcommands.ShopCommands
 api-version: '1.21.1'
 author: PrismSMP
@@ -37,3 +37,7 @@ commands:
     description: View all available player commands
     aliases:
       - cmds
+
+  # Navigation
+  spawn:
+    description: Teleport to spawn
