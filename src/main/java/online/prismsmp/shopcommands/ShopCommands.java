@@ -1,49 +1,52 @@
 package online.prismsmp.shopcommands;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ShopCommands extends JavaPlugin implements CommandExecutor {
+public class ShopCommands extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getCommand("commonshop").setExecutor(this);
-        getCommand("uncommonshop").setExecutor(this);
-        getCommand("rareshop").setExecutor(this);
-        getCommand("epicshop").setExecutor(this);
-        getCommand("legendaryshop").setExecutor(this);
-        getCommand("keyshopnpc").setExecutor(this);
-        getCommand("keyshop").setExecutor(this);
-        getLogger().info("ShopCommands enabled!");
+        // Crate shops
+        registerZMenuCommand("commonshop",    "common_shop");
+        registerZMenuCommand("uncommonshop",  "uncommon_shop");
+        registerZMenuCommand("rareshop",      "rare_shop");
+        registerZMenuCommand("epicshop",      "epic_shop");
+        registerZMenuCommand("legendaryshop", "legendary_shop");
+        registerZMenuCommand("keyshopnpc",    "keyshop_npc");
+        registerZMenuCommand("keyshop",       "keyshop_npc");
+
+        // NPC GUIs
+        registerZMenuCommand("rules",         "rules");
+        registerZMenuCommand("homenpc",       "home_npc");
+        registerZMenuCommand("discordnpc",    "discord_npc");
+        registerZMenuCommand("lbnpc",         "leaderboard_npc");
+        registerZMenuCommand("commands",      "commands_npc");
+        registerZMenuCommand("cmds",          "commands_npc");
+        registerZMenuCommand("mystats",       "leaderboard_npc");
+
+        getLogger().info("ShopCommands loaded - all commands registered.");
+    }
+
+    private void registerZMenuCommand(String commandName, String inventoryName) {
+        var cmd = getCommand(commandName);
+        if (cmd == null) {
+            getLogger().warning("Command not found in plugin.yml: " + commandName);
+            return;
+        }
+        cmd.setExecutor((sender, c, label, args) -> {
+            if (sender instanceof Player player) {
+                getServer().dispatchCommand(
+                    getServer().getConsoleSender(),
+                    "zm open " + inventoryName + " " + player.getName()
+                );
+            }
+            return true;
+        });
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player player)) {
-            sender.sendMessage("Only players can use this command.");
-            return true;
-        }
-
-        String inventory = switch (command.getName().toLowerCase()) {
-            case "commonshop" -> "common_shop";
-            case "uncommonshop" -> "uncommon_shop";
-            case "rareshop" -> "rare_shop";
-            case "epicshop" -> "epic_shop";
-            case "legendaryshop" -> "legendary_shop";
-            case "keyshopnpc", "keyshop" -> "keyshop_npc";
-            default -> null;
-        };
-
-        if (inventory == null) return true;
-
-        getServer().dispatchCommand(
-            getServer().getConsoleSender(),
-            "zm open " + inventory + " " + player.getName()
-        );
-
-        return true;
+    public void onDisable() {
+        getLogger().info("ShopCommands disabled.");
     }
 }
