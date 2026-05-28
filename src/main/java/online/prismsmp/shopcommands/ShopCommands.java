@@ -16,6 +16,7 @@ public class ShopCommands extends JavaPlugin implements CommandExecutor {
         getCommand("epicshop").setExecutor(this);
         getCommand("legendaryshop").setExecutor(this);
         getCommand("keyshopnpc").setExecutor(this);
+        getCommand("keyshop").setExecutor(this);
         getLogger().info("ShopCommands enabled!");
     }
 
@@ -32,7 +33,7 @@ public class ShopCommands extends JavaPlugin implements CommandExecutor {
             case "rareshop" -> "rare_shop";
             case "epicshop" -> "epic_shop";
             case "legendaryshop" -> "legendary_shop";
-            case "keyshopnpc" -> "keyshop_npc";
+            case "keyshopnpc", "keyshop" -> "keyshop_npc";
             default -> null;
         };
 
