@@ -1,5 +1,5 @@
 name: ShopCommands
-version: 1.0.0
+version: 1.0.1
 main: online.prismsmp.shopcommands.ShopCommands
 api-version: '1.21'
 description: Opens zMenu shop inventories for all players
@@ -20,6 +20,9 @@ commands:
     description: Opens Legendary Crate Shop
     permission: ""
   keyshopnpc:
+    description: Opens Key Shop NPC menu
+    permission: ""
+  keyshop:
     description: Opens Key Shop NPC menu
     permission: ""
 permissions:
