@@ -1,43 +1,50 @@
 name: ShopCommands
-version: '1.2.0'
+version: 1.0.0
 main: online.prismsmp.shopcommands.ShopCommands
-api-version: '1.21.1'
-author: PrismSMP
-description: Opens zMenu inventories for all players regardless of permissions
+api-version: '1.21'
+description: Prism SMP shop commands, spawn, and vanish system
 
 commands:
-  # Crate shops
   commonshop:
-    description: Open Common crate shop
+    description: Open common crate shop
   uncommonshop:
-    description: Open Uncommon crate shop
+    description: Open uncommon crate shop
   rareshop:
-    description: Open Rare crate shop
+    description: Open rare crate shop
   epicshop:
-    description: Open Epic crate shop
+    description: Open epic crate shop
   legendaryshop:
-    description: Open Legendary crate shop
+    description: Open legendary crate shop
   keyshopnpc:
-    description: Open key shop NPC GUI
+    description: Open key shop
   keyshop:
-    description: Open key shop (alias)
-
-  # NPC GUIs
+    description: Open key shop
   rules:
-    description: View server rules
+    description: Open rules GUI
   homenpc:
-    description: Open home manager
+    description: Open home NPC GUI
   discordnpc:
-    description: Open Discord GUI
+    description: Open discord NPC GUI
   lbnpc:
-    description: View leaderboards and personal stats
-    aliases:
-      - mystats
+    description: Open leaderboard NPC GUI
   commands:
-    description: View all available player commands
-    aliases:
-      - cmds
-
-  # Navigation
+    description: Open commands GUI
+  cmds:
+    description: Open commands GUI
+  mystats:
+    description: Open stats GUI
   spawn:
     description: Teleport to spawn
+  vanish:
+    description: Toggle vanish mode
+    aliases: [v]
+    permission: prismsmp.vanish
+    permission-message: You don't have permission to use this command.
+
+permissions:
+  prismsmp.vanish:
+    description: Allows toggling vanish mode
+    default: op
+  prismsmp.vanish.see:
+    description: Allows seeing vanished players
+    default: op
