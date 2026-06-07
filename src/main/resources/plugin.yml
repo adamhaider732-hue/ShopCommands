@@ -1,50 +1,51 @@
 name: ShopCommands
-version: 1.0.0
+version: '1.4.0'
 main: online.prismsmp.shopcommands.ShopCommands
-api-version: '1.21'
-description: Prism SMP shop commands, spawn, and vanish system
+api-version: '1.21.1'
+author: PrismSMP
+description: Opens zMenu inventories for all players regardless of permissions
 
 commands:
+  # Crate shops
   commonshop:
-    description: Open common crate shop
+    description: Open Common crate shop
   uncommonshop:
-    description: Open uncommon crate shop
+    description: Open Uncommon crate shop
   rareshop:
-    description: Open rare crate shop
+    description: Open Rare crate shop
   epicshop:
-    description: Open epic crate shop
+    description: Open Epic crate shop
   legendaryshop:
-    description: Open legendary crate shop
+    description: Open Legendary crate shop
   keyshopnpc:
-    description: Open key shop
+    description: Open key shop NPC GUI
   keyshop:
-    description: Open key shop
+    description: Open key shop (alias)
+
+  # NPC GUIs
   rules:
-    description: Open rules GUI
+    description: View server rules
   homenpc:
-    description: Open home NPC GUI
+    description: Open home manager
   discordnpc:
-    description: Open discord NPC GUI
+    description: Open Discord GUI
   lbnpc:
-    description: Open leaderboard NPC GUI
+    description: View leaderboards and personal stats
+    aliases:
+      - mystats
   commands:
-    description: Open commands GUI
-  cmds:
-    description: Open commands GUI
-  mystats:
-    description: Open stats GUI
+    description: View all available player commands
+    aliases:
+      - cmds
+  trims:
+    description: View functional armor trim effects
+  strengthinfo:
+    description: View StrengthSMP info
+  orbitalstrikes:
+    description: View Orbital Strike info and recipes
+  mapartinfo:
+    description: View Map Art guide
+
+  # Navigation
   spawn:
     description: Teleport to spawn
-  vanish:
-    description: Toggle vanish mode
-    aliases: [v]
-    permission: prismsmp.vanish
-    permission-message: You don't have permission to use this command.
-
-permissions:
-  prismsmp.vanish:
-    description: Allows toggling vanish mode
-    default: op
-  prismsmp.vanish.see:
-    description: Allows seeing vanished players
-    default: op
