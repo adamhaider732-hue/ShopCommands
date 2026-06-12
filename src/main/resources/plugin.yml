@@ -1,51 +1,40 @@
 name: ShopCommands
-version: '1.4.0'
+version: '1.5.0'
 main: online.prismsmp.shopcommands.ShopCommands
-api-version: '1.21.1'
-author: PrismSMP
-description: Opens zMenu inventories for all players regardless of permissions
-
+api-version: '1.21'
+description: Routes player commands to zMenu inventories via console dispatch
 commands:
-  # Crate shops
   commonshop:
-    description: Open Common crate shop
+    description: Open Common Crate shop
   uncommonshop:
-    description: Open Uncommon crate shop
+    description: Open Uncommon Crate shop
   rareshop:
-    description: Open Rare crate shop
+    description: Open Rare Crate shop
   epicshop:
-    description: Open Epic crate shop
+    description: Open Epic Crate shop
   legendaryshop:
-    description: Open Legendary crate shop
+    description: Open Legendary Crate shop
   keyshopnpc:
-    description: Open key shop NPC GUI
+    description: Open Key Shop NPC
   keyshop:
-    description: Open key shop (alias)
-
-  # NPC GUIs
+    description: Open Key Shop
   rules:
-    description: View server rules
+    description: Open server rules
   homenpc:
-    description: Open home manager
+    description: Open home NPC
   discordnpc:
-    description: Open Discord GUI
+    description: Open Discord NPC
   lbnpc:
-    description: View leaderboards and personal stats
-    aliases:
-      - mystats
+    description: Open leaderboard NPC
   commands:
-    description: View all available player commands
-    aliases:
-      - cmds
+    description: Open commands list
+  cmds:
+    description: Open commands list
+  mystats:
+    description: Open personal stats
   trims:
-    description: View functional armor trim effects
-  strengthinfo:
-    description: View StrengthSMP info
+    description: Open armor trims info
   orbitalstrikes:
-    description: View Orbital Strike info and recipes
+    description: Open orbital strikes info
   mapartinfo:
-    description: View Map Art guide
-
-  # Navigation
-  spawn:
-    description: Teleport to spawn
+    description: Open map art info
