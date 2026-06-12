@@ -25,11 +25,10 @@ public class ShopCommands extends JavaPlugin {
         registerZMenuCommand("cmds",            "commands_npc");
         registerZMenuCommand("mystats",         "leaderboard_npc");
         registerZMenuCommand("trims",           "trims_npc");
-        registerZMenuCommand("strengthinfo",    "strengthinfo");
         registerZMenuCommand("orbitalstrikes",  "orbitalstrikes_npc");
         registerZMenuCommand("mapartinfo",      "mapart_npc");
 
-        getLogger().info("ShopCommands loaded - all commands registered.");
+        getLogger().info("ShopCommands v1.5.0 loaded - all commands registered.");
     }
 
     private void registerZMenuCommand(String commandName, String inventoryName) {
